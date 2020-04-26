@@ -11,6 +11,14 @@
       - `apiServer.js`: It will serve the API that we use in this project. This uses `Express` and `json-server` to host a mock API and simulated database using a JSON file.
       - `createMockDB.js`: Thiw will create our mock DB each time we start the app. The script will read our mock and write it to separate file called `db.json`. The `db.json` file will be read and manipulated by our API server.
       - `mockData.js`: contains the mock data. This data will be used to populate our mock database. This mock data contains an array of Pluralsight courses and down at the bottom also an array of authors, as well as the data structure for creating a new course.
+  
+#### Kept the scripts to use 
+
+To kept the scripts above to use we need to add new scripts  `pakage.json` 
+
+- ` "start:api": "node tools/apiServer.js",` : this script will use Node to call `tools/apiServer.js`. 
+- We want to reacreate the mock database each time that we start our API. to do so let us create another script called `prestart:api`that will use node to call `tools/createMockDB.js`. By convention, this will run before `start:api` because it has the same name, but prefixed with `pre`. The mock database will be recreated in each restart
+- Now let set set up the mock api to start every time we start the app. To do so we should reanem the start script => `"start:dev":react-scripts start` then create a new start script right above it. Here we're going to use the `npm-run-all` package, which provides a command called `run-p` this will allow to run both the app and the mock api in the same time. `run-p` stand for run parallel. We provide this command with list of scripts we want to run in the same time in our case `start:dev`, `start:api` => `"start": run-p start:dev start:api`. Once we run now npm start it should run both the application and our mock api.
      
   
 ## Credits 
