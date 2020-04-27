@@ -28,6 +28,11 @@ The folder `api` under `src` folder contains file that make it easier to use the
 - `AuthorApi`contains functions that will get authors, save authors and delete authors.
 - `apiUtils` centralizes the handling of our API responses. We're using fetch to make API class. Fetch is build into modern browsers so we can make HTTP calls without installing an extra library.
 
+#### Configure the Env var for the base URL of the mock API 
+
+To configure the API base URL we need to update the package.json file: 
+- Set `start:dev` script to run `cross-env`. This is package from npm that we installed to allows us to set environment variables in cross- platform friendly way. The env var we want to set is `REACT_APP_API_URL`, and we will set it to the URL for our mock API which is `localhost:3001`
+- `create-react-app` will loks for any env var that start with `REACT_APP` and allows us to replace their values in code.
   
 ## Credits 
 All credits got for [Building Applications with React and Flux](https://app.pluralsight.com/library/courses/react-flux-building-applications/table-of-contents) cours in react Path in pluralsight made by Cory House.
