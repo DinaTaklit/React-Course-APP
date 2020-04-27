@@ -1,9 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
-import {render} from "react-dom";
-import HomePage from './components/HomePage';
+import { render } from "react-dom";
+import App from "./components/App";
 
-render(
-    <HomePage></HomePage>,
-    document.getElementById('root')
-);
+
+render(<App></App>, document.getElementById("root"));
