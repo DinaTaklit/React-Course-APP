@@ -5,7 +5,7 @@ function Header() {
   const activeStyle = {color: "orange"};
   return (
     <nav>
-      <NavLink activeStyle={activeStyle} to="/">Home
+      <NavLink activeStyle={activeStyle} exact to="/">Home
       </NavLink>
       {" | "} 
       <NavLink activeStyle={activeStyle} to="/courses">Courses
