@@ -9,10 +9,14 @@ const ManageCoursePage = (props) => {
     authorId: null,
     category: ""
   });
+  function handleTitleChange(event){
+    const updatedCourse = {...course, title:event.target.value};
+    setCourse(updatedCourse);
+  }
   return (
     <>
       <h2> Manage Course</h2>
-      <CourseForm course={course}/>
+      <CourseForm course={course} onTitleChange={ handleTitleChange}/>
     </>
   );
 };
