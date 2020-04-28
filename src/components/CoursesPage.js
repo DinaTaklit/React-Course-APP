@@ -23,7 +23,7 @@ class CoursePage extends React.Component {
           <tbody>
             {this.state.courses.map((course) => {
               return (
-                <tr>
+                <tr key={course.id}>
                   <td>{course.title}</td>
                   <td>{course.authorId}</td>
                   <td>{course.category}</td>
@@ -32,7 +32,7 @@ class CoursePage extends React.Component {
             })}
           </tbody>
         </table>
-    </>
+      </>
     );
   }
 }
