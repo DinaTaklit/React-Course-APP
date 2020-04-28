@@ -22,7 +22,7 @@ function CourseForm(props) {
           <select
             id="author"
             name="authorId"
-            value={props.course.authorId}
+            value={props.course.authorId || ""}
             className="form-control"
           >
             <option value="" />
