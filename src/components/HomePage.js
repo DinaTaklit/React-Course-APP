@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+
 // this componenet will display our home page
 function HomePage() {
   return (
