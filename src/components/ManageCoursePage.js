@@ -21,7 +21,11 @@ const ManageCoursePage = (props) => {
   }
   function handleSubmit(event){
     event.preventDefault();
-    coureApi.saveCourse(course)
+    // since saveCourse return a promise we can add code :D 
+    coureApi.saveCourse(course).then(()=>{
+      // Since this compoenet is loaded via React Router's route componet we have access to React Router's history object on props so we can programmatically redirect the user here after the save is completed 
+      props.history.push("/courses");
+    });
   }
   return (
     <>
