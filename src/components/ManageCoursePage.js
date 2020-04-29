@@ -9,14 +9,14 @@ const ManageCoursePage = (props) => {
     authorId: null,
     category: ""
   });
-  function handleTitleChange(event){
-    const updatedCourse = {...course, title:event.target.value};
+  function handleChange(event){
+    const updatedCourse = {[event.target.name]:event.target.value}; /* Use computed property to set the values to inputs by their name to avoind create a hndler for each one */
     setCourse(updatedCourse);
   }
   return (
     <>
       <h2> Manage Course</h2>
-      <CourseForm course={course} onTitleChange={ handleTitleChange}/>
+      <CourseForm course={course} onChange={ handleChange}/>
     </>
   );
 };
