@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import CourseForm from "./CourseForm";
 import * as coureApi from '../api/courseApi'; // import all the function in the course Apo
 
+import { toast } from "react-toastify";
+
 const ManageCoursePage = (props) => {
   const [course, setCourse] = useState({
     id: null,
@@ -25,6 +27,7 @@ const ManageCoursePage = (props) => {
     coureApi.saveCourse(course).then(()=>{
       // Since this compoenet is loaded via React Router's route componet we have access to React Router's history object on props so we can programmatically redirect the user here after the save is completed 
       props.history.push("/courses");
+      toast.success(`The course: ${course.title} was saved successfuly!`);
     });
   }
   return (

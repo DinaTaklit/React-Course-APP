@@ -85,6 +85,46 @@
       "authorId": 1,
       "category": "React",
       "createdAt": 1588157605422
+    },
+    {
+      "id": 13,
+      "slug": "react-for-beginners",
+      "title": "React for beginners",
+      "authorId": 2,
+      "category": "React",
+      "createdAt": 1588170270176
+    },
+    {
+      "id": 14,
+      "slug": "react-for-newbies",
+      "title": "React for newbies",
+      "authorId": 2,
+      "category": "React",
+      "createdAt": 1588170871323
+    },
+    {
+      "id": 15,
+      "slug": "react-componenet",
+      "title": "React Componenet",
+      "authorId": 2,
+      "category": "React",
+      "createdAt": 1588171105000
+    },
+    {
+      "id": 16,
+      "slug": "react-vritual-dom",
+      "title": "React Vritual DOM ",
+      "authorId": 2,
+      "category": "React",
+      "createdAt": 1588171203318
+    },
+    {
+      "id": 17,
+      "slug": "react-state",
+      "title": "React State",
+      "authorId": 2,
+      "category": "React",
+      "createdAt": 1588171251799
     }
   ],
   "authors": [
