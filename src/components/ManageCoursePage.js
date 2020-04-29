@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CourseForm from "./CourseForm";
+import * as coureApi from '../api/courseApi'; // import all the function in the course Apo
 
 const ManageCoursePage = (props) => {
   const [course, setCourse] = useState({
@@ -18,10 +19,18 @@ const ManageCoursePage = (props) => {
       [target.name]: target.value,
     });
   }
+  function handleSubmit(event){
+    event.preventDefault();
+    coureApi.saveCourse(course)
+  }
   return (
     <>
       <h2> Manage Course</h2>
-      <CourseForm course={course} onChange={handleChange} />
+      <CourseForm 
+      course={course} 
+      onChange={handleChange}
+      onSubmit={handleSubmit}
+      />
     </>
   );
 };
