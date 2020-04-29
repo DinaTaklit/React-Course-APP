@@ -10,8 +10,9 @@ const ManageCoursePage = (props) => {
     category: ""
   });
   function handleChange(target){ /*this distructring is like doing const target = event.target*/
-    const updatedCourse = {...course,[target.name]:target.value}; /* Use computed property to set the values to inputs by their name to avoind create a hndler for each one */
-    setCourse(updatedCourse);
+    
+   /* Use computed property to set the values to inputs by their name to avoind create a hndler for each one */
+    setCourse({...course,[target.name]:target.value});
   }
   return (
     <>
