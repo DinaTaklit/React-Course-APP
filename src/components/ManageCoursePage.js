@@ -5,6 +5,7 @@ import * as coureApi from '../api/courseApi'; // import all the function in the 
 import { toast } from "react-toastify";
 
 const ManageCoursePage = (props) => {
+  const [errors, setErrors] = useState({});
   const [course, setCourse] = useState({
     id: null,
     slug: "",
@@ -21,8 +22,19 @@ const ManageCoursePage = (props) => {
       [target.name]: target.value,
     });
   }
+  function formIsValid(){
+    const _errors ={};
+    if(!course.title) _errors.title = "Title is required";
+    if(!course.authorId) _errors.authorId = "AuthorId is required";
+    if(!course.category) _errors.category = "Category is required";
+    setErrors(_errors);
+    // Form is valid if the errors object has no properties 
+    return Object.keys(_errors).length === 0;
+  }
+
   function handleSubmit(event){
     event.preventDefault();
+    if(!formIsValid()) return;
     // since saveCourse return a promise we can add code :D 
     coureApi.saveCourse(course).then(()=>{
       // Since this compoenet is loaded via React Router's route componet we have access to React Router's history object on props so we can programmatically redirect the user here after the save is completed 
@@ -34,6 +46,7 @@ const ManageCoursePage = (props) => {
     <>
       <h2> Manage Course</h2>
       <CourseForm 
+      errors={errors}
       course={course} 
       onChange={handleChange}
       onSubmit={handleSubmit}
