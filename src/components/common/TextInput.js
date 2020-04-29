@@ -5,8 +5,9 @@ function TextInput(props) {
   // to handle the error once we need to add error wrapper as boostrap logic
   let wrapperClass = "form-group";
   if (props.error.length > 0) {
-    wrapperClass += "has-error";
+    wrapperClass += " has-error";
   }
+
   return (
     <div className={wrapperClass}>
       <label htmlFor={props.id}>{props.label}</label>
