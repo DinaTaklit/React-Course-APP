@@ -1,8 +1,6 @@
 # Manage Courses Application Using React, React Router, Flux
 
-<video width="320" height="240" controls autoplay>
-  <source src="./ReactManageCourseApp.mp4" type="video/mp4">
-</video>
+![](ReactManageCourseApp.mp4)
 
 ## What I have learned from this App?
 ### Envirement Setup 
