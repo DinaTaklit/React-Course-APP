@@ -35,6 +35,12 @@ Dispatcher.register((action) => {
       _courses.push(action.course);
       store.emitChange(); // emit every change to notify the UI
       break;
+
+    case actionTypes.UPDATE_COURSE:
+      _courses = _courses.map(course => course.id === action.course.id ? action.course : course);
+      store.emitChange();
+      break;
+
     case actionTypes.LOAD_COURSES:
       _courses = action.courses;
       store.emitChange();

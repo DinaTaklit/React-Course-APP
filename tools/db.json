@@ -2,14 +2,14 @@
   "courses": [
     {
       "id": 1,
-      "title": "Securing React Apps with Auth0",
+      "title": "Securing React Apps with Auth05",
       "slug": "react-auth0-authentication-security",
       "authorId": 1,
       "category": "JavaScript"
     },
     {
       "id": 2,
-      "title": "React: The Big Picture",
+      "title": "React: The Big Picture1",
       "slug": "react-big-picture",
       "authorId": 1,
       "category": "JavaScript"

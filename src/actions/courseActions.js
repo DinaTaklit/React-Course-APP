@@ -6,7 +6,10 @@ export function saveCourse(course) {
   return courseApi.saveCourse(course).then((savedCourse) => {
     // hey dispatcher, go tell all the stores that a course was just created.
     dispatcher.dispatch({
-      actionType: actionTypes.CREATE_COURSE,
+      // if there is an id we will only update else we will create a course
+      actionType: course.id
+        ? actionTypes.UPDATE_COURSE
+        : actionTypes.CREATE_COURSE,
       course: savedCourse,
     });
   });
