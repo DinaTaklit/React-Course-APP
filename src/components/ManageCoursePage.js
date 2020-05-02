@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import CourseForm from "./CourseForm";
-import * as courseApi from "../api/courseApi"; // import all the function in the course Apo
+import courseStore from '../stores/courseStore'; // use the Store instead of the API 
 import { toast } from "react-toastify";
-
+import * as courseActions from '../actions/courseActions';
 
 const ManageCoursePage = (props) => {
   const [errors, setErrors] = useState({});
@@ -20,7 +20,8 @@ const ManageCoursePage = (props) => {
     const slug = props.match.params.slug; // get the slug from /courses/:slug
     console.log(slug);
     if (slug) {
-      courseApi.getCourseBySlug(slug).then((_course) => setCourse(_course));
+      // Set the course using the Store instead of the API 
+      setCourse(courseStore.getCourseBySlug(slug));
     }
     // Add the array of dependency to keep an eye on the slug, when the slug run the effect should rerun
   }, [props.match.params.slug]);
@@ -47,7 +48,8 @@ const ManageCoursePage = (props) => {
     event.preventDefault();
     if (!formIsValid()) return;
     // since saveCourse return a promise we can add code :D
-    courseApi.saveCourse(course).then(() => {
+    // Use actions instead of the API 
+    courseActions.saveCourse(course).then(() => {
       // Since this compoenet is loaded via React Router's route componet we have access to React Router's history object on props so we can programmatically redirect the user here after the save is completed
       props.history.push("/courses");
       toast.success(`The course: ${course.title} was saved successfuly!`);
