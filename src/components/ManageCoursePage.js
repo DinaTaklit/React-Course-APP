@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import CourseForm from "./CourseForm";
 import * as courseApi from "../api/courseApi"; // import all the function in the course Apo
 import { toast } from "react-toastify";
-import PropTypes from "prop-types";
+
 
 const ManageCoursePage = (props) => {
   const [errors, setErrors] = useState({});
@@ -66,10 +66,4 @@ const ManageCoursePage = (props) => {
   );
 };
 
-CourseForm.prototype = {
-  course: PropTypes.object.isRequired,
-  onSubmit: PropTypes.func.isRequired,
-  onChange: PropTypes.func.isRequired,
-  errors: PropTypes.object.isRequired,
-};
 export default ManageCoursePage;
