@@ -1,5 +1,9 @@
 # Manage Courses Application Using React, React Router, Flux
 
+<video width="320" height="240" controls autoplay>
+  <source src="./ReactManageCourseApp.mp4" type="video/mp4">
+</video>
+
 ## What I have learned from this App?
 ### Envirement Setup 
 - Configure VS Code Extensions: Use Prettier and ESLint extention to help format the code and write correct code
