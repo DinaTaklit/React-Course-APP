@@ -6,6 +6,7 @@ import * as courseActions from '../actions/courseActions';
 
 const ManageCoursePage = (props) => {
   const [errors, setErrors] = useState({});
+  const [courses, setCourses] = useState(courseStore.getCourses());
   const [course, setCourse] = useState({
     id: null,
     slug: "",
@@ -16,15 +17,22 @@ const ManageCoursePage = (props) => {
 
   // Get the course once the componenet mount
   useEffect(() => {
-    console.log("Use effect");
+    courseStore.addChangeListner(onChange);
     const slug = props.match.params.slug; // get the slug from /courses/:slug
-    console.log(slug);
-    if (slug) {
+    if (courses.length === 0){
+      courseActions.loadCourses();
+    }
+    else if (slug) {
       // Set the course using the Store instead of the API 
       setCourse(courseStore.getCourseBySlug(slug));
     }
     // Add the array of dependency to keep an eye on the slug, when the slug run the effect should rerun
-  }, [props.match.params.slug]);
+    return ()=> courseStore.removeChangeListner(onChange); // clear on unmount
+  }, [courses.length, props.match.params.slug]);
+
+  function onChange(){
+    setCourses(courseStore.getCourses());
+  }
 
   function handleChange({ target }) {
     /*this distructring is like doing const target = event.target*/
