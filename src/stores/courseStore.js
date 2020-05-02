@@ -32,6 +32,7 @@ const store = new CourseStore();
 Dispatcher.register((action) => {
   switch (action.actionType) {
     case actionTypes.DELETE_COURSE:
+      debugger;
       _courses = _courses.filter(
         course => course.id !== parseInt(action.id, 10)
       );

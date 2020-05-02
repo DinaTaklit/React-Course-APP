@@ -24,7 +24,11 @@ function CourseList(props) {
               <td>{course.category}</td>
               <td>
                 
-                <button className='btn btn-outline-danger' onClick={() => props.deleteCourse(course.id)}>Delete</button>
+                <button className='btn btn-outline-danger' onClick={() => {
+                  debugger;
+                  props.deleteCourse(course.id)
+                } 
+                }>Delete</button>
               </td>
             </tr>
           );
