@@ -1,3 +1,51 @@
+# Manage Courses Application Using React, React Router, Flux
+
+## What I have learned from this App?
+### Envirement Setup 
+- Configure VS Code Extensions: Use Prettier and ESLint extention to help format the code and write correct code
+- Create app with `create-react-app`
+- Install Flux, React Router, and Bootstrap 
+- Create Mock API to get mock date to stimulate a db to use it in the app.
+### Creating React Compoenents 
+- Create Function/Class Componenet 
+- Create App Entry Point 
+- Simple Routing
+### Props, State, Lifecycle Methods, and Keys
+- Props & State
+- Lifecycle Methods 
+- Display Array in a Table via Map
+- Keys
+### Hooks, Component, Componsition, and Prop Types
+- Hooks, 
+- Composing Components 
+- PropTypes and Default Props
+### React Router 
+- Intial COnfiguration, Declaring Routes
+- Links and NavLinks
+- Switch & 404s
+- Redirects
+- URL Parameters and Querystrings
+- URL Parameters 
+- Prompt on Transition 
+### Forms 
+- Create Form
+- Controlled Components
+- Form State and Change Handlers
+- Declaring State Change Handlers
+- Create & Consume Reusable Inputs
+- Saving Data 
+- Programmatic Redirects with React Router
+- Notifications via Third Party Component (Toast)
+- Input Validation and PropTypes
+- Populate Form via the URL 
+### Flux 
+- Dispatcher 
+- Actions
+- Stores: Change Listeners, Registration, Private Sorage, Interactions, Initialization
+- Update Course Flow with Flux
+- Adding Store Listeners
+- Delete Course via Flux 
+  
 ## Get Started 
 
 - To create the app use `npx create-react-app name_app`
